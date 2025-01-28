@@ -23,4 +23,22 @@ const initApp = () => {
     })
 }
 
+// Initialize Rocket Swiper
+const rocketSwiper = new Swiper(".rocketSwiper", {
+    spaceBetween: 30,
+    effect: "fade",
+    fadeEffect: {
+        crossFade: true
+    },
+    speed: 1000, // Transition speed in ms
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    }
+});
+
 document.addEventListener('DOMContentLoaded', initApp)
