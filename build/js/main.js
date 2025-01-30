@@ -41,4 +41,28 @@ const rocketSwiper = new Swiper(".rocketSwiper", {
     }
 });
 
+// Initialize Audio Swiper
+const audioSwiper = new Swiper(".audioSwiper", {
+    spaceBetween: 30,
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+    on: {
+        slideChange: function () {
+            // Tüm audio elementlerini seç
+            const audios = document.querySelectorAll('.audioSwiper audio');
+            // Her bir audio elementini durdur
+            audios.forEach(audio => {
+                audio.pause();
+                audio.currentTime = 0; // İsterseniz sesin başa dönmesini sağlayabilirsiniz
+            });
+        },
+    },
+});
+
 document.addEventListener('DOMContentLoaded', initApp)
