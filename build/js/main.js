@@ -23,6 +23,8 @@ const initApp = () => {
     })
 }
 
+document.addEventListener('DOMContentLoaded', initApp)
+
 // Initialize Rocket Swiper
 const rocketSwiper = new Swiper(".rocketSwiper", {
     spaceBetween: 30,
@@ -76,5 +78,5 @@ app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
 
-document.addEventListener('DOMContentLoaded', initApp)
+
 
